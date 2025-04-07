@@ -1,23 +1,54 @@
+
+let slideAtual = 1;
+
+function mostrarCarrossel() {
+  document.getElementById('carrossel').style.display = 'block';
+  atualizarSlides();
+}
+
+function slideProximo() {
+  slideAtual = slideAtual === 5 ? 1 : slideAtual + 1;
+  atualizarSlides();
+}
+
+function slideAnterior() {
+  slideAtual = slideAtual === 1 ? 5 : slideAtual - 1;
+  atualizarSlides();
+}
+
+function atualizarSlides() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+    if (parseInt(slide.getAttribute('data-slide')) === slideAtual) {
+      slide.classList.add('active');
+    }
+  });
+}
+
+function fecharCarrossel() {
+  document.getElementById('carrossel').style.display = 'none';
+}
+
 function abrirFormulario() {
   const nome = prompt("Digite seu nome:");
-  const numero = prompt("Digite seu número de telefone:");
+  const numero = prompt("Digite seu número:");
   const cidade = prompt("Digite sua cidade:");
   const modelo = prompt("Modelo do veículo:");
   const placa = prompt("Placa do veículo:");
 
-  if (nome && numero && cidade && modelo && placa) {
-    const msg = `Olá, me chamo ${nome} e gostaria de fazer uma simulação.\nCidade: ${cidade}\nTelefone: ${numero}\nVeículo: ${modelo}\nPlaca: ${placa}`;
-    const url = `https://wa.me/5511945731548?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
-  }
+  const msg = `Olá! Quero fazer uma simulação.
+
+Nome: ${nome}
+Número: ${numero}
+Cidade: ${cidade}
+Modelo: ${modelo}
+Placa: ${placa}`;
+  const url = `https://wa.me/SEUNUMERO?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
 }
 
 function falarComConsultor() {
-  const msg = "Gostaria de fazer minha cotação direto com um consultor";
-  const url = `https://wa.me/5511945731548?text=${encodeURIComponent(msg)}`;
-  window.open(url, "_blank");
-}
-
-function mostrarCarrossel() {
-  alert("Aqui entra o conteúdo do carrossel com os benefícios.");
+  const url = `https://wa.me/SEUNUMERO?text=${encodeURIComponent("Olá, gostaria de falar com um consultor.")}`;
+  window.open(url, '_blank');
 }
