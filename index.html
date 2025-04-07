@@ -1,55 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Universo AGV</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="chat-header">
-    <img src="perfil.jpg" alt="Perfil" class="profile-pic">
+    <img src="perfil.jpg" alt="Perfil" class="profile-pic" />
     <div class="chat-info">
       <div class="chat-name">Universo AGV</div>
       <div class="chat-status">Online</div>
     </div>
   </div>
+
   <div id="chat-box">
     <div class="message">Olá! Como podemos te ajudar hoje?</div>
   </div>
+
   <div id="chat-buttons">
-    <button onclick="abrirFormulario()">Fazer uma simulação</button>
+    <button onclick="abrirSimulacao()">Fazer uma simulação</button>
     <button onclick="mostrarCarrossel()">Saber mais sobre o serviço</button>
     <button class="consultor" onclick="falarComConsultor()">Falar com consultor</button>
   </div>
 
-  <div id="carrossel" style="display: none;">
-    <div class="carousel-slide active" data-slide="1">
-      <p class="slide-title">Benefício 1</p>
-      <p class="slide-text">Descrição do primeiro benefício.</p>
+  <div id="carousel" class="carousel">
+    <div class="carousel-slide active">
+      <div class="slide-title">Benefício 1</div>
+      <div class="slide-text">Descrição do primeiro benefício.</div>
     </div>
-    <div class="carousel-slide" data-slide="2">
-      <p class="slide-title">Benefício 2</p>
-      <p class="slide-text">Descrição do segundo benefício.</p>
+    <div class="carousel-slide">
+      <div class="slide-title">Benefício 2</div>
+      <div class="slide-text">Descrição do segundo benefício.</div>
     </div>
-    <div class="carousel-slide" data-slide="3">
-      <p class="slide-title">Benefício 3</p>
-      <p class="slide-text">Descrição do terceiro benefício.</p>
+    <div class="carousel-slide">
+      <div class="slide-title">Benefício 3</div>
+      <div class="slide-text">Descrição do terceiro benefício.</div>
     </div>
-    <div class="carousel-slide" data-slide="4">
-      <p class="slide-title">Nota no Reclame Aqui</p>
-      <img src="reclame-aqui.png" alt="Reclame Aqui" style="width: 100%; border-radius: 12px;" />
+    <div class="carousel-slide">
+      <div class="slide-title">Benefício 4</div>
+      <div class="slide-text">Descrição do quarto benefício.</div>
     </div>
-    <div class="carousel-slide" data-slide="5">
-      <p class="slide-title">Benefícios Extras</p>
-      <p class="slide-text">Aqui destacamos os diferenciais do serviço para o cliente.</p>
+    <div class="carousel-slide">
+      <div class="slide-title">Benefícios Extras</div>
+      <div class="slide-text">Outros benefícios adicionais que o cliente pode aproveitar.</div>
     </div>
     <div class="carousel-controls">
-      <button onclick="slideAnterior()">◀</button>
-      <button onclick="slideProximo()">▶</button>
+      <button onclick="mudarSlide(-1)">◀</button>
+      <button onclick="mudarSlide(1)">▶</button>
     </div>
-    <button onclick="fecharCarrossel()">Fechar</button>
   </div>
 
   <script src="script.js"></script>
